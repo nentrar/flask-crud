@@ -79,7 +79,7 @@ def delete(id):
             return redirect('/data')
         os.abort()
 
-    return render_template('index.html')
+    return render_template('delete.html')
 
 
 app.run(host='localhost', port=5000)

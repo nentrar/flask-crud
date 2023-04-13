@@ -10,7 +10,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
 
-@setupmethod
+@app.before_first_request
 def create_table():
     db.create_all()
 
@@ -79,7 +79,7 @@ def delete(id):
             return redirect('/data')
         os.abort()
 
-    return render_template('delete.html')
+    return render_template('index.html')
 
 
 app.run(host='localhost', port=5000)

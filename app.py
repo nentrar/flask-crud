@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect
+from flask.scaffold import setupmethod
 from models import db, EmployeeModel
 import os
 
@@ -9,9 +10,14 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
 
-@app.before_first_request
+@setupmethod
 def create_table():
     db.create_all()
+
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 
 @app.route('/data/create', methods=['GET', 'POST'])

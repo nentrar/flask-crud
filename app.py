@@ -26,7 +26,8 @@ def create():
         return render_template('create_employee.html')
 
     if request.method == 'POST':
-        employee_id = request.form['employee_id']
+        employees = EmployeeModel.query.all()
+        employee_id = len(employees)+1
         name = request.form['name']
         age = request.form['age']
         position = request.form['position']

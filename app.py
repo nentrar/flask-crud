@@ -29,9 +29,11 @@ def create():
         employees = EmployeeModel.query.all()
         employee_id = len(employees)+1
         name = request.form['name']
+        surname = request.form['surname']
+        fullname = name + " " + surname
         age = request.form['age']
         position = request.form['position']
-        employee = EmployeeModel(employee_id=employee_id, name=name, age=age, position=position)
+        employee = EmployeeModel(employee_id=employee_id, name=fullname, age=age, position=position)
         db.session.add(employee)
         db.session.commit()
         return redirect('/data')

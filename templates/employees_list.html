@@ -1,3 +1,7 @@
 {% for employee in employees %}
-<h3>{{employee}}</h3><hr>
+<h3>{{employee}}</h3>
+<a href="{{ url_for('read_employee', id=employee.id) }}">Details</a>
+<a href="{{ url_for('update', id=employee.id) }}">Update</a>
+<a href="{{ url_for('delete', id=employee.id) }}">Delete</a>
+<hr>
 {% endfor %}

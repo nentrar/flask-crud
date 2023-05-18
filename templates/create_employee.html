@@ -2,14 +2,14 @@
   <p>First name <input type = "text" name = "name" pattern="\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+" title="Name should start with capital" required/></p>
   <p>Surname <input type = "text" name = "surname" pattern="\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+" title="Surname should start with capital" required/></p>
   <p>Age <input type = "integer" name = "age" pattern="^(1[89]|[2-5][0-9]|6[0-5])$" title="Age should not be below 18 and above 65" required/></p>
-  <p>Position <input list = "position" name = "position" required/>
-    <datalist id="position">
-    <option value="Software Developer">
-    <option value="Software Integration & Verification Engineer">
-    <option value="Project Manager">
-    <option value="Product Manager">
-    <option value="Line Manager">
-  </datalist>
+  <p>Position <select name = "position" required>
+    <option value="" selected>Select position</option>
+    <option value="Software Developer">Software Developer</option>
+    <option value="Software Integration & Verification Engineer">Software Integration & Verification Engineer</option>
+    <option value="Project Manager">Project Manager</option>
+    <option value="Product Manager">Product Manager</option>
+    <option value="Line Manager">Line Manager</option>
+    </select>
   </p>
   <p><input type = "submit" value = "Submit" /></p>
 </form>
